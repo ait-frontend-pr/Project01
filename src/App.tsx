@@ -3,6 +3,8 @@ import Card from "./components/Card/Card";
 import Greeting from "./components/Greeting/Greeting";
 import ThankYou from "./components/ThankYou/ThankYou";
 import catPicture from "./assets/b.jpg";
+import Goodbye from "./components/Goodbye/Goodbye";
+import ProfileCard from "./components/ProfileCard/ProfileCard";
 
 function App() {
   // 1.Создайте компонент, который бы возвращал div
@@ -18,8 +20,19 @@ function App() {
   const name = "Alex";
   return (
     <>
+      <ProfileCard
+        avatar={
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrxOTdBgCXwbUydQIy_30TzwBYJ6wrUhF78A&s"
+        }
+        name={"Cote Alex"}
+        description={
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        }
+      />
       <Greeting name={name} />
-      <Greeting name={"Max"} age={18} />
+
+      {/* <Greeting name={"Max"} age={18} /> */}
+      <Goodbye />
       <ThankYou />
       <Card
         url={
@@ -28,7 +41,7 @@ function App() {
         alt="Cat img"
       />
       <img src="/a.jpg" alt="asd" />
-      <img src={catPicture} alt="asd" style={{ width: "300px" }}/>
+      <img src={catPicture} alt="asd" style={{ width: "300px" }} />
     </>
   );
 }
