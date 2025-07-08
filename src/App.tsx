@@ -5,6 +5,9 @@ import ThankYou from "./components/ThankYou/ThankYou";
 import catPicture from "./assets/b.jpg";
 import Goodbye from "./components/Goodbye/Goodbye";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
+import Counter from "./components/Counter/Counter";
+import PersonalGreeting from "./components/PersonalGreeting/PersonalGreeting";
+import WeightCalculator from "./components/WeightCalculator/WeightCalculator";
 
 function App() {
   // 1.Создайте компонент, который бы возвращал div
@@ -18,8 +21,19 @@ function App() {
   // пусть ссылка на картинку передается при помощи пропса url
 
   const name = "Alex";
+  const user = {
+        avatar:"https://thumbs.dreamstime.com/b/d-cat-avatar-online-games-web-account-avatar-generated-ai-d-cat-avatar-online-games-web-account-avatar-generated-ai-268992881.jpg",
+        name:"Cote John",
+        description:"Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        
+  };
   return (
+    
     <>
+      <WeightCalculator />
+      <Counter />
+      <PersonalGreeting />
+      <ProfileCard avatar={user.avatar} name={user.name} description={user.description} />
       <ProfileCard
         avatar={
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrxOTdBgCXwbUydQIy_30TzwBYJ6wrUhF78A&s"
@@ -40,7 +54,7 @@ function App() {
         }
         alt="Cat img"
       />
-      <img src="/a.jpg" alt="asd" />
+      <img src="/a.jpg" alt="asd" style={{ width: "200px" }}/>
       <img src={catPicture} alt="asd" style={{ width: "300px" }} />
     </>
   );
