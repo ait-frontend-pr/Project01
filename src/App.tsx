@@ -1,14 +1,17 @@
 import "./App.css";
-import Card from "./components/Card/Card";
-import Greeting from "./components/Greeting/Greeting";
-import ThankYou from "./components/ThankYou/ThankYou";
+// import Card from "./components/Card/Card";
+// import Greeting from "./components/Greeting/Greeting";
+// import ThankYou from "./components/ThankYou/ThankYou";
 import catPicture from "./assets/b.jpg";
-import Goodbye from "./components/Goodbye/Goodbye";
+// import Goodbye from "./components/Goodbye/Goodbye";
 import ProfileCard from "./components/ProfileCard/ProfileCard";
 import Counter from "./components/Counter/Counter";
 import PersonalGreeting from "./components/PersonalGreeting/PersonalGreeting";
 import WeightCalculator from "./components/WeightCalculator/WeightCalculator";
 import SpaceMissionForm from './components/SpaceMissionForm/SpaceMissionForm'
+import Demo from "./components/Demo";
+import { AgePredictor } from "./components/AgePredictor/AgePredictor";
+import GenderPredictor from "./components/GenderPredictor/GenderPredictor";
 
 function App() {
   // 1.Создайте компонент, который бы возвращал div
@@ -21,7 +24,7 @@ function App() {
   // пусть там будет тег img внутри контейнера div
   // пусть ссылка на картинку передается при помощи пропса url
 
-  const name = "Alex";
+  // const name = "Alex";
   const user = {
         avatar:"https://thumbs.dreamstime.com/b/d-cat-avatar-online-games-web-account-avatar-generated-ai-d-cat-avatar-online-games-web-account-avatar-generated-ai-268992881.jpg",
         name:"Cote John",
@@ -31,11 +34,15 @@ function App() {
   return (
     
     <>
+      <GenderPredictor />
+      <AgePredictor />
+      <Demo />
       <SpaceMissionForm />
       <WeightCalculator />
       <Counter />
       <PersonalGreeting />
       <ProfileCard avatar={user.avatar} name={user.name} description={user.description} />
+
 
       {/* <Greeting name={name} /> */}
 
