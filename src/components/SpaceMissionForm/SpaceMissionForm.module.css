@@ -1,0 +1,14 @@
+.formContainer {
+  border: 1px solid #180b27;
+  padding: 24px;
+  margin: 24px;
+  border-radius: 12px;
+  background-color: #a289b7;
+}
+
+input,
+select {
+  border-radius: 4px;
+  margin: 12px 0;
+  padding: 4px;
+}
