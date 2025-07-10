@@ -7,7 +7,9 @@ export default function GenderPredictor() {
   const [probability, setProbability] = useState<number>(0);
   const [credits, setCredits] = useState<number>(0);
   const [error, setError] = useState("");
-
+  const key = import.meta.env.VITE_GENDER_API_KEY;
+  
+  
   async function fetchGender() {
     if (name.trim() === "") {
       setError("Please enter a name");
@@ -17,16 +19,16 @@ export default function GenderPredictor() {
     setError("");
 
     try {
-      const response = await fetch(
-        `https://api.genderapi.io/api/?name=${name}`
+      const res = await fetch(
+        `https://api.genderapi.io/api/?key=${key}&name=${name}`
       );
-      const res = await response.json();
+      const obj = await res.json();
 
-      if (res.gender) {
-        setGender(res.gender);
-        setCountry(res.country);
-        setProbability(res.probability);
-        setCredits(res.remaining_credits);
+      if (obj.gender) {
+        setGender(obj.gender);
+        setCountry(obj.country);
+        setProbability(obj.probability);
+        setCredits(obj.remaining_credits);
       } else {
         setError("Couldn't determine the gender");
       }
