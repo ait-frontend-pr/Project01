@@ -1,7 +1,3 @@
-import React from 'react'
-
 export default function BuyPony() {
-  return (
-    <div>BuyPony</div>
-  )
+  return <div>BuyPony</div>;
 }
