@@ -9,5 +9,12 @@ export const ROUTES = {
   PONY_BUY_PONY: "/pony/buy-pony",//
   ABOUT: "/about",
   CONTACT: "/contact",
+  PRODUCTS:"/products",
+  PRODUCTS_ID:"/products/:id",
+  USERS:"/users",
+  USERS_ID:"/users/:id",
+  ACCOUNT:"/account",
+  ACCOUNT_SETTINGS:"/account/settings",
+  ACCOUNT_INFO:"/account/info",
   NOT_FOUND: "*",
 } as const;
