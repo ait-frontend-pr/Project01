@@ -22,8 +22,8 @@ export default function UserPage() {
       <img src={user?.avatar} alt="user" width="120" />
       <h3>Email: {user?.email}</h3>
       <h4>Role: {user?.role}</h4>
-      <h4>Creation at: {user?.creationAt}</h4>
-      <h4>Updated at: {user?.updatedAt}</h4>
+      <h4>Creation at: {user ? new Date(user.creationAt).toLocaleString("de-DE") : ""}</h4>
+      <h4>Updated at: {user ? new Date(user.updatedAt).toLocaleString("de-DE") : ""}</h4>
     </div>
   );
 }
