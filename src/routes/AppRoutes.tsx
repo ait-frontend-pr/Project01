@@ -15,10 +15,12 @@ import Registration from "../pages/Registration/Registration";
 import AccountLayout from "../layout/AccountLayout";
 import AccountSettings from "../components/AccountSettings/AccountSettings";
 import AccountInfo from "../components/AccountInfo/AccountInfo";
-import { ProductsList } from "../pages/ProductsList/ProductsList";
+import { ProductsList } from "../components/ProductsList/ProductsList";
 import ProductPage from "../pages/ProductPage/ProductPage";
-import { UsersList } from "../pages/UsersList/UsersList";
+import { UsersList } from "../components/UsersList/UsersList";
 import UserPage from "../pages/UserPage/UserPage";
+import Login from "../pages/Login/Login";
+import AddProduct from "../pages/AddProduct/AddProduct";
 
 export default function AppRoutes() {
   return (
@@ -27,6 +29,7 @@ export default function AppRoutes() {
         <Route path={ROUTES.HOME} element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path={ROUTES.REGISTRATION} element={<Registration />} />
+          <Route path={ROUTES.LOGIN} element={<Login/>} />
           <Route path={ROUTES.GENDER_PREDICTOR} element={<GenderPredictor />} />
           <Route path={ROUTES.AGE_PREDICTOR} element={<AgePredictor />} />
           <Route path={ROUTES.COUNTER} element={<Counter />} />
@@ -38,6 +41,7 @@ export default function AppRoutes() {
           <Route path={ROUTES.CONTACT} element={<Contact />} />
           <Route path={ROUTES.PRODUCTS} element={<ProductsList />} />
           <Route path={ROUTES.PRODUCTS_ID} element={<ProductPage />}/>
+          <Route path={ROUTES.ADD_PRODUCT} element={<AddProduct />}/>
           <Route path={ROUTES.USERS} element={<UsersList />}/>
           <Route path={ROUTES.USERS_ID} element={<UserPage />}/>
           {/*  */}

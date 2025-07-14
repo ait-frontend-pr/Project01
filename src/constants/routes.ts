@@ -1,6 +1,7 @@
 export const ROUTES = {
   HOME: "/",
   REGISTRATION: "/registration",
+  LOGIN: "/login",
   GENDER_PREDICTOR: "/gender-predictor",
   AGE_PREDICTOR: "/age-predictor",
   COUNTER: "/counter",
@@ -11,6 +12,7 @@ export const ROUTES = {
   CONTACT: "/contact",
   PRODUCTS:"/products",
   PRODUCTS_ID:"/products/:id",
+  ADD_PRODUCT:"/add-product",
   USERS:"/users",
   USERS_ID:"/users/:id",
   ACCOUNT:"/account",

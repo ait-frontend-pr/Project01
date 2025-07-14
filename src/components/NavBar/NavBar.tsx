@@ -16,6 +16,9 @@ export default function NavBar() {
         <NavLink to={ROUTES.REGISTRATION} className={classSelector}>
           Sign Up
         </NavLink>
+        <NavLink to={ROUTES.LOGIN} className={classSelector}>
+          Sign In
+        </NavLink>
         <NavLink to={ROUTES.GENDER_PREDICTOR} className={classSelector}>
           Gender predictor
         </NavLink>
@@ -36,6 +39,9 @@ export default function NavBar() {
         </NavLink>
         <NavLink to={ROUTES.PRODUCTS} className={classSelector}>
           Products
+        </NavLink>
+        <NavLink to={ROUTES.ADD_PRODUCT} className={classSelector}>
+          Add Product
         </NavLink>
         <NavLink to={ROUTES.USERS} className={classSelector}>
           Users

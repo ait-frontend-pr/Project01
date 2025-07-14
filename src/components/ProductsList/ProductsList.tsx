@@ -21,7 +21,7 @@ export const ProductsList = () => {
         {products.map((p) => (
           <li key={"product" + p.id}>
             <h3>{p.title}</h3>
-            <img src={p.images[0]} alt="product" />
+            <img src={p.images[0]} alt="product" width="320" />
             <span>{p.price}$</span>
             <Link to={`/products/${p.id}`}>To product</Link>
           </li>
