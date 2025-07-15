@@ -1,6 +1,7 @@
 import { Formik, Form, Field } from "formik";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as Yup from "yup";
+import type { Category } from "../../types";
 const ProductSchema = Yup.object().shape({
   title: Yup.string().min(2).max(100).required("Title is required"),
   price: Yup.number().min(1).required("Price is required"),
@@ -22,6 +23,18 @@ interface Product {
 
 const AddProduct = () => {
   const [message, setMessage] = useState("");
+  const [categories, setCategories] = useState<Category[]>([]);
+
+  async function fetchCategories() {
+    const res = await fetch("https://api.escuelajs.co/api/v1/categories");
+    const arr = await res.json();
+    setCategories(arr);
+  }
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
   async function fetchAddProduct(values: Product) {
     const res = await fetch("https://api.escuelajs.co/api/v1/products/", {
       method: "POST",
@@ -68,8 +81,12 @@ const AddProduct = () => {
               <div>{errors.description}</div>
             ) : null}
 
-            <label>Category Id:</label>
-            <Field name="categoryId" type="number" />
+            <label>Category:</label>
+            <Field as="select" name="categoryId">
+              {/* <option value="1">Electronics</option>
+              <option value="2">Clothes</option> */}
+              {categories.map(c => <option value={c.id}>{c.name}</option>)}
+            </Field>
             {errors.categoryId && touched.categoryId ? (
               <div>{errors.categoryId}</div>
             ) : null}

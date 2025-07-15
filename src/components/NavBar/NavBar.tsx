@@ -1,12 +1,18 @@
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
-import styles from "./NavBar.module.css"
+import styles from "./NavBar.module.css";
+import { useCurrentUser } from "../../hooks/useCurrentUser";
+import { useCounter } from "../../hooks/useCounter";
 
 export default function NavBar() {
   const classSelector = ({ isActive }: { isActive: boolean }) => {
     return isActive ? styles.navLinkActive : styles.navLink;
   };
-  
+
+  const { user } = useCurrentUser();
+
+  const { counter } = useCounter();
+
   return (
     <>
       <nav className={styles.navBar}>
@@ -49,6 +55,10 @@ export default function NavBar() {
         <NavLink to={ROUTES.ACCOUNT} className={classSelector}>
           Account
         </NavLink>
+
+        {user?.email}
+
+        {counter}
       </nav>
     </>
   );

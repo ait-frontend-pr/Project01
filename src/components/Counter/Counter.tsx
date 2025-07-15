@@ -1,26 +1,10 @@
+import { useCounter } from '../../hooks/useCounter';
 import styles from './Counter.module.css'
-import { useState } from "react";
 
 export default function Counter() {
-    const initialValue = 0;
-  //   let counter = 0;
-  const [counter, setCounter] = useState<number>(initialValue);
-  //     tuple ^
+  
+  const { counter, handlePlus, handleMinus, handleReset } = useCounter(); 
 
-  function handlePlus() {
-    // setCounter(counter + 1);
-    setCounter((prev) => prev + 1);
-    console.log(counter);
-  }
-
-  function handleMinus() {
-    setCounter((prev) => prev - 1);
-    console.log(counter);
-  }
-
-  function handleReset() {
-    setCounter(initialValue);
-  }
 
   return (
     <div className={styles.counterCard}>
@@ -37,7 +21,3 @@ export default function Counter() {
     </div>
   );
 }
-
-// создайте кнопку -1, которая бы уменьшала значение counter на 1
-// дополнительно создайте кнопку reset, которая бы сбрасывала значение counter до 0
-// добавьте стилизацию
