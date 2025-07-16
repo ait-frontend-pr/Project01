@@ -3,9 +3,7 @@ import { createContext } from "react";
 
 interface CounterContextType {
   counter: number;
-  handlePlus: () => void;
-  handleMinus: () => void;
-  handleReset: () => void;
+  setCounter: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const CounterContext = createContext<CounterContextType | undefined>(

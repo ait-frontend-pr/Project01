@@ -9,21 +9,25 @@ export default function NavBar() {
     return isActive ? styles.navLinkActive : styles.navLink;
   };
 
-  const { user } = useCurrentUser();
+  const { user, setIsAuthorized, isAuthorized } = useCurrentUser();
 
   const { counter } = useCounter();
 
+  function handleLogout() {
+    setIsAuthorized(false);
+  }
+
   return (
     <>
-      <nav className={styles.navBar}>
+      <nav className="flex justify-center items-center gap-4 flex-wrap bg-pink-200 min-h-14 p-6">
         <NavLink to={ROUTES.HOME} className={classSelector}>
           Home
         </NavLink>
-        <NavLink to={ROUTES.REGISTRATION} className={classSelector}>
-          Sign Up
+        <NavLink to={"/gallery"} className={classSelector}>
+          Gallery
         </NavLink>
-        <NavLink to={ROUTES.LOGIN} className={classSelector}>
-          Sign In
+        <NavLink to={"/toggle-card"} className={classSelector}>
+          Toggle Card
         </NavLink>
         <NavLink to={ROUTES.GENDER_PREDICTOR} className={classSelector}>
           Gender predictor
@@ -55,10 +59,22 @@ export default function NavBar() {
         <NavLink to={ROUTES.ACCOUNT} className={classSelector}>
           Account
         </NavLink>
+        <NavLink to={ROUTES.REGISTRATION} className={classSelector}>
+          Sign Up
+        </NavLink>
+        <NavLink to={ROUTES.LOGIN} className={classSelector}>
+          Sign In
+        </NavLink>
 
         {user?.email}
 
         {counter}
+
+        {isAuthorized ? (
+          <button type="button" onClick={handleLogout}>
+            Logout
+          </button>
+        ) : null}
       </nav>
     </>
   );
