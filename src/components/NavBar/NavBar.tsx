@@ -29,6 +29,9 @@ export default function NavBar() {
         <NavLink to={"/toggle-card"} className={classSelector}>
           Toggle Card
         </NavLink>
+        <NavLink to={"/parent"} className={classSelector}>
+          Parent
+        </NavLink>
         <NavLink to={ROUTES.GENDER_PREDICTOR} className={classSelector}>
           Gender predictor
         </NavLink>

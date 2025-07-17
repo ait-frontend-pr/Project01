@@ -23,6 +23,7 @@ import Login from "../pages/Login/Login";
 import AddProduct from "../pages/AddProduct/AddProduct";
 import Gallery from "../components/Gallery/Gallery";
 import ToggleCard from "../components/ToggleCard/ToggleCard";
+import { Parent } from "../components/Parent/Parent";
 
 export default function AppRoutes() {
   return (
@@ -32,6 +33,7 @@ export default function AppRoutes() {
           <Route index element={<Home />} />
           <Route path={"/gallery"} element={<Gallery />} />
           <Route path={"/toggle-card"} element={<ToggleCard />} />
+          <Route path={"/parent"} element={<Parent/>} />
           <Route path={ROUTES.REGISTRATION} element={<Registration />} />
           <Route path={ROUTES.LOGIN} element={<Login/>} />
           <Route path={ROUTES.GENDER_PREDICTOR} element={<GenderPredictor />} />
